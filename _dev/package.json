@@ -8,7 +8,7 @@
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js",
     "css:lint": "sass-lint -c sass-lint.yml -v -q",
-    "esdoc": "cd ./src/babels/src && esdoc -c esdoc.json",
+    "esdoc": "esdoc -c esdoc.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
