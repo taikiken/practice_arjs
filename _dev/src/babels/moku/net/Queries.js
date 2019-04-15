@@ -98,7 +98,7 @@ export default class Queries {
    */
   constructor(queryString = window.location.search) {
     const [data, keys] = Queries.parse(queryString);
-    const naked = Queries.naked(queryString);
+    // const naked = Queries.naked(queryString);
     /**
      * query key を取得します - query key array
      * @type {Array<string>}
@@ -109,16 +109,16 @@ export default class Queries {
      * @type {Object}
      */
     this.data = data;
-    /**
-     * query 文字列を取得します - パースする query 文字列
-     * @type {string}
-     */
-    this.queryString = queryString;
-    /**
-     * パースしやすいように正規化した query 文字列 - `?` 以降文字 + `&amp;` を `&` へ置換えます
-     * @type {string}
-     */
-    this.naked = naked;
+    // /**
+    //  * query 文字列を取得します - パースする query 文字列
+    //  * @type {string}
+    //  */
+    // this.queryString = queryString;
+    // /**
+    //  * パースしやすいように正規化した query 文字列 - `?` 以降文字 + `&amp;` を `&` へ置換えます
+    //  * @type {string}
+    //  */
+    // this.naked = naked;
   }
 
   // ----------------------------------------

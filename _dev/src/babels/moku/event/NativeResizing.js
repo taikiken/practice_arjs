@@ -134,11 +134,6 @@ export default class NativeResizing extends EventDispatcher {
      * @type {number}
      */
     this.timer = 0;
-    // /**
-    //  * bind onUpdate - scroll / resize / timer handler
-    //  * @type {function}
-    //  */
-    // this.onUpdate = this.onUpdate.bind(this);
   }
 
   // ----------------------------------------

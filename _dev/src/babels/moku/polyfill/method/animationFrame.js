@@ -21,9 +21,9 @@ const animationFrame = () => {
     return;
   }
   // vendor prefix
-  const vendors = ['ms', 'moz', 'webkit', 'o'];
+  // const vendors = ['ms', 'moz', 'webkit', 'o'];
   // add vendor prefix
-  vendors.some((prefix) => {
+  ['ms', 'moz', 'webkit', 'o'].some((prefix) => {
     window.requestAnimationFrame = window[`${prefix}RequestAnimationFrame`];
     window.cancelAnimationFrame = window[`${prefix}CancelAnimationFrame`]
       || window[`${prefix}CancelRequestAnimationFrame`];
@@ -50,5 +50,7 @@ const animationFrame = () => {
     };
   }
 };
+
+animationFrame();
 
 export default animationFrame;

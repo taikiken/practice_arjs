@@ -38,8 +38,8 @@ export default class Classes {
 
   /**
    * 引数 `element` の class name list を取得します
-   * 1. `classList` && `Array.from` - `Array.from(element.classList)`
-   * 2. {@link Classes.convert}
+   * - `classList` && `Array.from` - `Array.from(element.classList)`
+   * - {@link Classes.convert}
    * @param {Element} element 操作対象 Element
    * @returns {Array.<string>} 引数 `element` の class を配列変換し返します
    */
@@ -66,7 +66,6 @@ export default class Classes {
   /**
    * Element へ引数 className を追加します
    * - className 存在チェック
-   * -
    * @param {Element} node 操作対象 Element
    * @param {string} className 追加対象 CSS class name
    * @returns {boolean} 追加に成功すると true を返します

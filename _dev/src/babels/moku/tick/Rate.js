@@ -32,7 +32,7 @@ import Polling from './Polling';
  * - 5: RATE_5
  *
  * @example
- * // 1sec interval
+ * // 60fps interval
  * const rate = new Rate(Rate.Rate_60);
  * const update = () => {
  *  // code here, something do

@@ -10,7 +10,7 @@
  *
  */
 
-import './fetch';
+import './promise';
 
 // @see https://github.com/whatwg/fetch
 // @see https://fetch.spec.whatwg.org/
