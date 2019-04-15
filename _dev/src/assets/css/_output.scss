@@ -1,0 +1,13 @@
+// reset など出力系も asset.scss で import しています。
+// 出力制御は project-setting.scss で行います
+@import "asset";
+
+// ---------------------------------------
+// 出力ファイルリンケージ
+// ---------------------------------------
+
+// reset
+@import "../../../scss/style/reset";
+
+// 基本 class
+@import "../../../scss/dependencies/style";

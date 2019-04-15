@@ -1,0 +1,117 @@
+// reset
+//
+// parachute.bz<br>
+// Distributed under the terms of the MIT license.<br>
+// http://www.opensource.org/licenses/mit-license.html
+//
+// Styleguide 1.5.0
+
+//-----------------------------------------------------
+//  reset
+//-----------------------------------------------------
+
+// property reset
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+fieldset,
+img,
+object {
+  border: 0;
+  vertical-align: bottom;
+}
+
+img {
+  font-size: 0;
+  line-height: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q {
+  &::before,
+  &::after {
+    content: "";
+  }
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+legend {
+  // sass-lint:disable no-color-literals
+  color: #000;
+  // sass-lint:enable no-color-literals
+}

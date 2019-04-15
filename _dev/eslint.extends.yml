@@ -1,0 +1,54 @@
+extends:
+  - "eslint:recommended"
+rules:
+  # http://eslint.org/docs/rules/indent
+  indent:
+    - 2
+    - 2
+    - SwitchCase: 1
+
+  # http://eslint.org/docs/rules/require-jsdoc
+  # JSDoc 必須
+  require-jsdoc:
+    - 1
+    - require:
+        FunctionDeclaration: true
+        MethodDefinition: true
+        ClassDeclaration: true
+
+  # http://eslint.org/docs/rules/valid-jsdoc
+  # enforce valid JSDoc comments (valid-jsdoc)
+  # 正しい JSDoc 必須, warning level.
+  valid-jsdoc:
+    - 1
+    - requireReturn: false
+
+  # http://eslint.org/docs/rules/no-console
+  # console.warn, console.error は許可
+  no-console:
+    - 1
+    - allow:
+      - warn
+      - error
+
+  # http://eslint.org/docs/rules/max-len#ignorecomments
+  max-len:
+   - 1
+   - ignoreComments: true
+     code: 100
+
+  # https://eslint.org/docs/rules/spaced-comment
+  spaced-comment:
+  - 1
+  - 'always'
+  - line:
+      markers: ['/']
+      exceptions: ['-', '+']
+
+  # https://eslint.org/docs/rules/no-return-assign
+  no-return-assign:
+    - 1
+
+  # https://github.com/eslint/eslint/issues/2283#issuecomment-260928189
+  react/jsx-uses-vars:
+    - 2

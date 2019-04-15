@@ -1,0 +1,98 @@
+// Project setting
+//
+// 基本設定(_default-setting.scss), 上書きを行います
+//
+// Styleguide 1.1.2
+
+//// Support
+//$graceful-usage-threshold: 100;
+//$critical-usage-threshold: 100;
+//
+//$support-ie8: false;
+//$support-ie7: $support-ie8;
+//
+//// Path
+//$project-path: '/' !default;
+//$project-path-img: "#{$project-path}/common/img" !default;
+//
+//// Font
+//$font-color: #333 !default;
+//$font-family: -apple-system, 'BlinkMacSystemFont', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, verdana, sans-serif !default;
+$font-size: 14px;
+// $line-height: 1.5 !default;
+$default-em: 14px;
+//
+//// Various global styles
+//$float: left !default;
+$box-sizing: border-box;
+// font smoothing
+// on or off
+$font-smoothing: on;
+//$bg-color: #fff !default;
+
+// $highlight-color: #e1438b;
+// $border-primary-color: #ddd;
+// $bg-primary-color: #f5f5f5;
+
+$global-width: 1280px;
+$global-inner-width: 1200px;
+
+
+//
+//// Media Queries
+//$media-screen: "only screen";
+
+// Breakpointの数(1 or 2)で使い分ける
+// $breakpoints 使わない方はコメントアウトする
+$breakpoints: (
+  "screen-small": "only screen and (max-width: 768px)",
+  "screen-large": "only screen and (min-width: 769px)",
+);
+
+// $breakpoints: (
+//   'screen-small': 'only screen and (max-width: 1279px)',
+//   'screen-medium': 'only screen and (min-width: 1280px) and (max-width: 1439px)',
+//   'screen-large': 'only screen and (max-width: 1440px)',
+// );
+
+//$media-landscape: "only screen and (orientation: landscape)";
+//$media-portrait: "only screen and (orientation: portrait)";
+
+// --------------------------------------------
+// output class
+// dependencies/_style.scss 定義 class はデフォルト出力しません
+// 出力する時は `_project-setting.scss` で override します
+// --------------------------------------------
+// body background-color + color + font-family
+$out-body-style: false;
+// body font-size, line-height
+$out-font-size: false;
+// body * line-height by $line-height
+$out-body-line-height: false;
+// * box-sizing by $box-sizing
+$out-box-sizing: false;
+// * $font-smoothing by $font-smoothing
+$out-font-smoothing: false;
+// font-size 汎用class
+$out-common-font-classes: false;
+// float reset
+$out-clearfix: false;
+// float, left / right
+$out-float: false;
+// align for table, td, th
+$out-table: false;
+// space (gao)
+$out-gap: false;
+// table cell width
+$out-table: false;
+// text style
+$out-text-style: false;
+// hide anchor
+$out-skip-link: false;
+// show / hide
+$out-show-hide: false;
+
+// -------------------------------
+// HTML5 tag setting
+// foundation で設定ずみなので default 出力しません
+$out-html5: false;

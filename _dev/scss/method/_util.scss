@@ -1,0 +1,33 @@
+// Utility function
+//
+// Compatible in latest Browser
+// Styleguide 2.2.0
+
+// ---------------------------------------------
+// *setting.scss 依存
+// ---------------------------------------------
+
+@import "../setting";
+
+// strip-unit
+// It strips the unit of measure and returns it
+// $num - number
+// Styleguide 2.2.1
+@function strip-unit($num) {
+  // http://sass-lang.com/documentation/Sass/Script/Functions.html#type_of-instance_method
+  // noinspection CssInvalidFunction
+  @if type-of($num) != number {
+    //@warn "#{$num} is not a number.";
+    @return $num;
+  }
+
+  @return $num / ($num * 0 + 1);
+}
+
+// percent
+// Converts "px" to "%" using the ($)size-base
+// Styleguide 2.2.2
+@function percent($target-value, $base-value: $global-width) {
+  $value: strip-unit($target-value) / strip-unit($base-value) * 100%;
+  @return $value;
+}

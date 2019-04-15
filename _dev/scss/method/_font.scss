@@ -1,0 +1,50 @@
+// font
+//
+// all browser 用 font function, 下位ブラウザ用上書きは _asset.scss で行います
+//
+// Compatible in latest Browser
+// Styleguide 2.1.0
+
+// styleguide:ignore:start
+
+// fs
+// 現在設定の font-size に対し指定したい絶対 font-size を元に相対 font-size を計算します
+//
+// $size - 指定したい絶対 font-size
+// $context - 現設定の font-size
+// $unit - 単位, font-size へ与える単位 default: em [px, em, %, pt...]
+//
+// Compatible in latest Browser
+// Styleguide 2.1.1
+@function fs($size, $context, $unit: em) {
+  @if ($unit == "%") {
+    @return #{$size / $context * 100}#{$unit};
+  } @else {
+    @return #{$size / $context}#{$unit};
+  }
+}
+
+
+// letter-spacing を計算します
+//
+// $letter-spacing=0 - 設定値, [Number, inline-block]
+// Styleguide 2.1.2
+@function ls($letter-spacing: 0) {
+  @if ($letter-spacing == "inline-block") {
+    @return -0.4em;
+  } @else {
+    @return #{$letter-spacing * 0.001 + "em"};
+  }
+}
+
+// styleguide:ignore:end
+
+
+// line-height を計算します
+//
+// $line-spacing=1 - font-size に対する line-height gap
+// $font-size=1 - font-size, 単位なし
+// Styleguide 2.1.3
+@function lh($line-spacing: 1, $font-size: 1) {
+  @return $line-spacing / $font-size;
+}

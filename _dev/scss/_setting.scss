@@ -1,0 +1,14 @@
+// Setting
+//
+// setting file
+//
+// Styleguide 1.1.0
+
+// ---------------------------------------
+// default setting に続けて
+// project setting を import します
+// _project-setting.scss で上書き設定します
+// ---------------------------------------
+
+@import "preference/default-setting";
+@import "project-setting";

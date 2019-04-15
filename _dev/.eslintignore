@@ -1,0 +1,16 @@
+# bundle
+*.bundle.js
+*.compile.js
+
+# app/**/libs
+app/assets/js/*
+# app/**/*.js
+
+# vendor.js
+#vendor.js
+
+# node
+node_modules/*
+
+# _docs
+_docs/*

@@ -1,0 +1,78 @@
+// setting 依存 function / mixin
+//
+// Compatible in latest Browser
+// Styleguide 2.4.0
+
+// ---------------------------------------------
+// *setting.scss 依存
+// ---------------------------------------------
+
+@import "../setting";
+
+// -----------------------------------------------------------------------------------
+// function
+
+// fz
+// font-size を設定します
+//
+// $size - int 単位なし
+// Styleguide 2.4.1
+@function fz($size) {
+  @if $size < 8 {
+    $size: 8;
+  }
+  @if $size > 40 {
+    $size: 40;
+  }
+  @if $font-size == 12px {
+    //フォントサイズのリスト（12px基準）
+    $font-size-list: 66%, 75%, 83%, 91%, 100%, 108%, 116%, 125%, 133%, 141%, 150%, 158%, 166%, 175%, 183%, 191%, 200%, 208%, 216%, 225%, 233%, 241%, 250%, 258%, 266%, 275%, 283%, 291%, 300%, 308%, 316%, 325%, 333%;
+    // http://sass-lang.com/documentation/Sass/Script/Functions.html#nth-instance_method
+    // noinspection CssInvalidFunction
+    @return nth($font-size-list, $size - 7);
+  } @else if $font-size == 13px {
+    //フォントサイズのリスト（13px基準）
+    $font-size-list: 62%, 70%, 77%, 85%, 93%, 100%, 108%, 116%, 124%, 131%, 139%, 147%, 154%, 162%, 170%, 177%, 185%, 193%, 200%, 208%, 216%, 224%, 231%, 239%, 247%, 254%, 262%, 270%, 277%, 285%, 293%, 300%, 308%;
+    // http://sass-lang.com/documentation/Sass/Script/Functions.html#nth-instance_method
+    // noinspection CssInvalidFunction
+    @return nth($font-size-list, $size - 7);
+  } @else if $font-size == 14px {
+    //フォントサイズのリスト（14px基準）
+    $font-size-list: 57%, 64%, 72%, 79%, 86%, 93%, 100%, 108%, 115%, 122%, 129%, 136%, 143%, 150%, 158%, 165%, 172%, 179%, 186%, 193%, 200%, 224%, 214%, 221%, 229%, 236%, 243%, 250%, 257%, 264%, 271%, 279%, 256%;
+    // http://sass-lang.com/documentation/Sass/Script/Functions.html#nth-instance_method
+    // noinspection CssInvalidFunction
+    @return nth($font-size-list, $size - 7);
+  } @else {
+    //フォントサイズのリスト（16px基準）
+    $font-size-list: 50%, 57%, 63%, 69%, 75%, 82%, 88%, 94%, 100%, 107%, 113%, 119%, 125%, 132%, 138%, 144%, 150%, 157%, 163%, 169%, 175%, 182%, 188%, 194%, 200%, 207%, 213%, 219%, 225%, 232%, 238%, 244%, 250%;
+    // http://sass-lang.com/documentation/Sass/Script/Functions.html#nth-instance_method
+    // noinspection CssInvalidFunction
+    @return nth($font-size-list, $size - 7);
+  }
+}
+
+
+// -----------------------------------------------------------------------------------
+// mixin
+
+// screen
+// mixin
+// Media Queries を設定します
+//
+// $screen-type - string screen-small|screen-medium|screen-large, default 'screen-small'
+// Styleguide 2.4.2
+@mixin screen($screen-type: "screen-small") {
+  @if $screen-type == "screen-small" {
+    @media #{map-get($breakpoints, "screen-small")} {
+      @content;
+    }
+  } @else if $screen-type == "screen-medium" {
+    @media #{map-get($breakpoints, "screen-medium")} {
+      @content;
+    }
+  } @else if $screen-type == "screen-large" {
+    @media #{map-get($breakpoints, "screen-large")} {
+      @content;
+    }
+  }
+}

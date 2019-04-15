@@ -1,0 +1,941 @@
+// Common class<br>
+//
+// setting.scss + mixin.scss に依存します
+//
+// Styleguide 3.0.0
+
+///**
+//  common setup
+//* ************************************************ */
+
+// 依存ファイルインポート
+@import "../asset";
+
+// ------------------------------------------
+// body background-color + color + font-family
+// 3.0.1
+// ------------------------------------------
+@if $out-body-style {
+  body {
+    background-color: $bg-color;
+    color: $font-color;
+    font-family: $font-family;
+  }
+}
+
+// ------------------------------------------
+// body font-size, line-height
+// 3.0.2
+// ------------------------------------------
+@if $out-font-size {
+  // basic font set
+  @if $font-size == 12px {
+    body {
+      line-height: 1.231;
+      font-size: 75%;
+    }
+  } @else if $font-size == 13px {
+    body {
+      line-height: 1.231;
+      font-size: 13px;
+    }
+  } @else {
+    body {
+      background-color: $bg-color;
+      font-size: $font-size;
+    }
+  }
+}
+// ------------------------------------------
+// body * line-height by $line-height
+// ------------------------------------------
+@if $out-body-line-height {
+  // Default line-height based on font-size rather than "computed-value"
+  // see: http://www.w3.org/TR/CSS21/visudet.html#line-height
+  body * {
+    line-height: $line-height;
+  }
+}
+// ------------------------------------------
+// * box-sizing by $box-sizing
+// ------------------------------------------
+@if $out-box-sizing {
+  * {
+    box-sizing: $box-sizing;
+  }
+}
+// ------------------------------------------
+// * $font-smoothing by $font-smoothing
+// ------------------------------------------
+@if $out-font-smoothing {
+  * {
+    @if $font-smoothing == on {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      // scss-lint:disable VendorPrefix
+      -moz-font-feature-settings: "liga", "kern";
+    } @else {
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: auto;
+    }
+  }
+}
+// ------------------------------------------
+// font-size 汎用class
+// ------------------------------------------
+// sass-lint:disable empty-line-between-blocks, no-important
+@if $out-common-font-classes {
+  // Individual font module
+  // @include fzComment( $default-font-size );
+
+  @if $font-size == 12px {
+    //----------------------------------------
+    //  font-size
+    //------------------------------------------
+    //Font-size list (base: 12px)
+    // 66% =  8px
+    // 75% =  9px
+    // 83% = 10px
+    // 91% = 11px        175% = 21px        258% = 31px
+    //100% = 12px        183% = 22px        266% = 32px
+    //108% = 13px        191% = 23px        275% = 33px
+    //116% = 14px        200% = 24px        283% = 34px
+    //125% = 15px        208% = 25px        291% = 35px
+    //133% = 16px        216% = 26px        300% = 36px
+    //141% = 17px        225% = 27px        308% = 37px
+    //150% = 18px        233% = 28px        316% = 38px
+    //158% = 19px        241% = 29px        325% = 39px
+    //166% = 20px        250% = 30px        333% = 40px
+
+    .f08 {
+      font-size: 66% !important;
+    }
+    .f09 {
+      font-size: 75% !important;
+    }
+    .f10 {
+      font-size: 83% !important;
+    }
+    .f11 {
+      font-size: 91% !important;
+    }
+    .f12 {
+      font-size: 100% !important;
+    }
+    .f13 {
+      font-size: 108% !important;
+    }
+    .f14 {
+      font-size: 116% !important;
+    }
+    .f15 {
+      font-size: 125% !important;
+    }
+    .f16 {
+      font-size: 133% !important;
+    }
+    .f17 {
+      font-size: 141% !important;
+    }
+    .f18 {
+      font-size: 150% !important;
+    }
+    .f19 {
+      font-size: 158% !important;
+    }
+    .f20 {
+      font-size: 166% !important;
+    }
+    .f21 {
+      font-size: 175% !important;
+    }
+    .f22 {
+      font-size: 183% !important;
+    }
+    .f23 {
+      font-size: 191% !important;
+    }
+    .f24 {
+      font-size: 200% !important;
+    }
+    .f25 {
+      font-size: 208% !important;
+    }
+    .f26 {
+      font-size: 216% !important;
+    }
+    .f27 {
+      font-size: 225% !important;
+    }
+    .f28 {
+      font-size: 233% !important;
+    }
+    .f29 {
+      font-size: 241% !important;
+    }
+    .f30 {
+      font-size: 250% !important;
+    }
+    .f31 {
+      font-size: 258% !important;
+    }
+    .f32 {
+      font-size: 266% !important;
+    }
+    .f33 {
+      font-size: 275% !important;
+    }
+    .f34 {
+      font-size: 283% !important;
+    }
+    .f35 {
+      font-size: 291% !important;
+    }
+    .f36 {
+      font-size: 300% !important;
+    }
+    .f37 {
+      font-size: 308% !important;
+    }
+    .f38 {
+      font-size: 316% !important;
+    }
+    .f39 {
+      font-size: 325% !important;
+    }
+    .f40 {
+      font-size: 333% !important;
+    }
+  } @else if $font-size == 13px {
+    //----------------------------------------
+    //  font-size
+    //------------------------------------------
+    //Font-size list (base: 13px)
+    // 62% =  8px
+    // 70% =  9px
+    // 77% = 10px
+    // 85% = 11px        162% = 21px        239% = 31px
+    // 93% = 12px        170% = 22px        247% = 32px
+    //100% = 13px        177% = 23px        254% = 33px
+    //108% = 14px        185% = 24px        262% = 34px
+    //116% = 15px        193% = 25px        270% = 35px
+    //124% = 16px        200% = 26px        277% = 36px
+    //131% = 17px        208% = 27px        285% = 37px
+    //139% = 18px        216% = 28px        293% = 38px
+    //147% = 19px        224% = 29px        300% = 39px
+    //154% = 20px        231% = 30px        308% = 40px
+
+    .f08 {
+      font-size: 62% !important;
+    }
+    .f09 {
+      font-size: 70% !important;
+    }
+    .f10 {
+      font-size: 77% !important;
+    }
+    .f11 {
+      font-size: 85% !important;
+    }
+    .f12 {
+      font-size: 93% !important;
+    }
+    .f13 {
+      font-size: 100% !important;
+    }
+    .f14 {
+      font-size: 108% !important;
+    }
+    .f15 {
+      font-size: 116% !important;
+    }
+    .f16 {
+      font-size: 124% !important;
+    }
+    .f17 {
+      font-size: 131% !important;
+    }
+    .f18 {
+      font-size: 139% !important;
+    }
+    .f19 {
+      font-size: 147% !important;
+    }
+    .f20 {
+      font-size: 154% !important;
+    }
+    .f21 {
+      font-size: 162% !important;
+    }
+    .f22 {
+      font-size: 170% !important;
+    }
+    .f23 {
+      font-size: 177% !important;
+    }
+    .f24 {
+      font-size: 185% !important;
+    }
+    .f25 {
+      font-size: 193% !important;
+    }
+    .f26 {
+      font-size: 200% !important;
+    }
+    .f27 {
+      font-size: 208% !important;
+    }
+    .f28 {
+      font-size: 216% !important;
+    }
+    .f29 {
+      font-size: 224% !important;
+    }
+    .f30 {
+      font-size: 231% !important;
+    }
+    .f31 {
+      font-size: 239% !important;
+    }
+    .f32 {
+      font-size: 247% !important;
+    }
+    .f33 {
+      font-size: 254% !important;
+    }
+    .f34 {
+      font-size: 262% !important;
+    }
+    .f35 {
+      font-size: 270% !important;
+    }
+    .f36 {
+      font-size: 277% !important;
+    }
+    .f37 {
+      font-size: 285% !important;
+    }
+    .f38 {
+      font-size: 293% !important;
+    }
+    .f39 {
+      font-size: 300% !important;
+    }
+    .f40 {
+      font-size: 308% !important;
+    }
+  } @else if $font-size == 14px {
+    //----------------------------------------
+    //  font-size
+    //------------------------------------------
+    //Font-size list (base: 14px)
+    // 57% =  8px
+    // 64% =  9px
+    // 72% = 10px
+    // 79% = 11px        150% = 21px        221% = 31px
+    // 86% = 12px        158% = 22px        229% = 32px
+    // 93% = 13px        165% = 23px        236% = 33px
+    //100% = 14px        172% = 24px        243% = 34px
+    //108% = 15px        179% = 25px        250% = 35px
+    //115% = 16px        186% = 26px        257% = 36px
+    //122% = 17px        193% = 27px        264% = 37px
+    //129% = 18px        200% = 28px        271% = 38px
+    //136% = 19px        224% = 29px        279% = 39px
+    //143% = 20px        214% = 30px        256% = 40px
+
+    .f08 {
+      font-size: 57% !important;
+    }
+    .f09 {
+      font-size: 64% !important;
+    }
+    .f10 {
+      font-size: 72% !important;
+    }
+    .f11 {
+      font-size: 79% !important;
+    }
+    .f12 {
+      font-size: 86% !important;
+    }
+    .f13 {
+      font-size: 93% !important;
+    }
+    .f14 {
+      font-size: 100% !important;
+    }
+    .f15 {
+      font-size: 108% !important;
+    }
+    .f16 {
+      font-size: 115% !important;
+    }
+    .f17 {
+      font-size: 122% !important;
+    }
+    .f18 {
+      font-size: 129% !important;
+    }
+    .f19 {
+      font-size: 136% !important;
+    }
+    .f20 {
+      font-size: 143% !important;
+    }
+    .f21 {
+      font-size: 150% !important;
+    }
+    .f22 {
+      font-size: 158% !important;
+    }
+    .f23 {
+      font-size: 165% !important;
+    }
+    .f24 {
+      font-size: 172% !important;
+    }
+    .f25 {
+      font-size: 179% !important;
+    }
+    .f26 {
+      font-size: 186% !important;
+    }
+    .f27 {
+      font-size: 193% !important;
+    }
+    .f28 {
+      font-size: 200% !important;
+    }
+    .f29 {
+      font-size: 224% !important;
+    }
+    .f30 {
+      font-size: 214% !important;
+    }
+    .f31 {
+      font-size: 221% !important;
+    }
+    .f32 {
+      font-size: 229% !important;
+    }
+    .f33 {
+      font-size: 236% !important;
+    }
+    .f34 {
+      font-size: 243% !important;
+    }
+    .f35 {
+      font-size: 250% !important;
+    }
+    .f36 {
+      font-size: 257% !important;
+    }
+    .f37 {
+      font-size: 264% !important;
+    }
+    .f38 {
+      font-size: 271% !important;
+    }
+    .f39 {
+      font-size: 279% !important;
+    }
+    .f40 {
+      font-size: 256% !important;
+    }
+  } @else {
+    //----------------------------------------
+    //  font-size
+    //------------------------------------------
+    //Font-size list (base: 16px)
+    // 50% =  8px
+    // 57% =  9px
+    // 63% = 10px
+    // 69% = 11px        132% = 21px        194% = 31px
+    // 75% = 12px        138% = 22px        200% = 32px
+    // 82% = 13px        144% = 23px        207% = 33px
+    // 88% = 14px        150% = 24px        213% = 34px
+    // 94% = 15px        157% = 25px        219% = 35px
+    //100% = 16px        163% = 26px        225% = 36px
+    //107% = 17px        169% = 27px        232% = 37px
+    //113% = 18px        175% = 28px        238% = 38px
+    //119% = 19px        182% = 29px        244% = 39px
+    //125% = 20px        188% = 30px        250% = 40px
+
+    .f08 {
+      font-size: 50% !important;
+    }
+    .f09 {
+      font-size: 57% !important;
+    }
+    .f10 {
+      font-size: 63% !important;
+    }
+    .f11 {
+      font-size: 69% !important;
+    }
+    .f12 {
+      font-size: 75% !important;
+    }
+    .f13 {
+      font-size: 82% !important;
+    }
+    .f14 {
+      font-size: 88% !important;
+    }
+    .f15 {
+      font-size: 94% !important;
+    }
+    .f16 {
+      font-size: 100% !important;
+    }
+    .f17 {
+      font-size: 107% !important;
+    }
+    .f18 {
+      font-size: 113% !important;
+    }
+    .f19 {
+      font-size: 119% !important;
+    }
+    .f20 {
+      font-size: 125% !important;
+    }
+    .f21 {
+      font-size: 132% !important;
+    }
+    .f22 {
+      font-size: 138% !important;
+    }
+    .f23 {
+      font-size: 144% !important;
+    }
+    .f24 {
+      font-size: 150% !important;
+    }
+    .f25 {
+      font-size: 157% !important;
+    }
+    .f26 {
+      font-size: 163% !important;
+    }
+    .f27 {
+      font-size: 169% !important;
+    }
+    .f28 {
+      font-size: 175% !important;
+    }
+    .f29 {
+      font-size: 182% !important;
+    }
+    .f30 {
+      font-size: 188% !important;
+    }
+    .f31 {
+      font-size: 194% !important;
+    }
+    .f32 {
+      font-size: 200% !important;
+    }
+    .f33 {
+      font-size: 207% !important;
+    }
+    .f34 {
+      font-size: 213% !important;
+    }
+    .f35 {
+      font-size: 219% !important;
+    }
+    .f36 {
+      font-size: 225% !important;
+    }
+    .f37 {
+      font-size: 232% !important;
+    }
+    .f38 {
+      font-size: 238% !important;
+    }
+    .f39 {
+      font-size: 244% !important;
+    }
+    .f40 {
+      font-size: 250% !important;
+    }
+  }
+}
+// sass-lint:enable empty-line-between-blocks, no-important
+
+// 1. float reset
+// -------------------------------------------------------------
+@if $out-clearfix {
+  .clr {
+    content: " ";
+    clear: both;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: 0 -1px -1px 0;
+    border: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+  }
+}
+
+// 2. float, left / right
+// -------------------------------------------------------------
+@if $out-float {
+  .f-left {
+    @if $support-ie7 {
+      display: inline;
+    }
+    float: left;
+  }
+
+  .f-right {
+    @if $support-ie7 {
+      display: inline;
+    }
+    float: right;
+  }
+}
+
+// 3. align for table, td, th
+// -------------------------------------------------------------
+@if $out-table {
+  // sass-lint:disable empty-line-between-blocks, no-important, force-element-nesting, no-qualifying-elements
+  .t-left {
+    text-align: left !important;
+  }
+  .t-center {
+    text-align: center !important;
+  }
+  .t-right {
+    text-align: right !important;
+  }
+  .v-top {
+    vertical-align: top !important;
+  }
+  .v-middle {
+    vertical-align: middle !important;
+  }
+  .v-bottom {
+    vertical-align: bottom !important;
+  }
+
+  table.t-left,
+  thead.t-left tr,
+  tbody.t-left tr,
+  tr.t-left {
+    th,
+    td {
+      text-align: left !important;
+      &.t-left {
+        text-align: left !important;
+      }
+      &.t-center {
+        text-align: center !important;
+      }
+      &.t-right {
+        text-align: right !important;
+      }
+    }
+  }
+  table.t-center,
+  thead.t-center tr,
+  tbody.t-center tr,
+  tr.t-center {
+    th,
+    td {
+      text-align: center !important;
+      &.t-left {
+        text-align: left !important;
+      }
+      &.t-center {
+        text-align: center !important;
+      }
+      &.t-right {
+        text-align: right !important;
+      }
+    }
+  }
+  table.t-right,
+  thead.t-right tr,
+  tbody.t-right tr,
+  tr.t-right {
+    th,
+    td {
+      text-align: right !important;
+      &.t-left {
+        text-align: left !important;
+      }
+      &.t-center {
+        text-align: center !important;
+      }
+      &.t-right {
+        text-align: right !important;
+      }
+    }
+  }
+
+  table.v-top,
+  thead.v-top tr,
+  tbody.v-top tr,
+  tr.v-top {
+    th,
+    td {
+      vertical-align: top !important;
+      &.v-top {
+        vertical-align: top !important;
+      }
+      &.v-middle {
+        vertical-align: middle !important;
+      }
+      &.v-bottom {
+        vertical-align: bottom !important;
+      }
+    }
+  }
+  table.v-middle,
+  thead.v-middle tr,
+  tbody.v-middle tr,
+  tr.v-middle {
+    th,
+    td {
+      vertical-align: middle !important;
+      &.v-top {
+        vertical-align: top !important;
+      }
+      &.v-middle {
+        vertical-align: middle !important;
+      }
+      &.v-bottom {
+        vertical-align: bottom !important;
+      }
+    }
+  }
+  table.v-bottom,
+  thead.v-bottom tr,
+  tbody.v-bottom tr,
+  tr.v-bottom {
+    th,
+    td {
+      vertical-align: bottom !important;
+      &.v-top {
+        vertical-align: top !important;
+      }
+      &.v-middle {
+        vertical-align: middle !important;
+      }
+      &.v-bottom {
+        vertical-align: bottom !important;
+      }
+    }
+  }
+  // sass-lint:enable empty-line-between-blocks, no-important
+}
+
+// 4. space
+// -------------------------------------------------------------
+@if $out-gap {
+  // styleguide:ignore:start
+  $space-value: 100;
+
+  @include prc-each("mt", "mb", "pt", "pb") {
+    $tmp: null;
+    $properties: null;
+
+    @for $i from 0 through $space-value {
+      @if $i < 10 {
+        $tmp: "0#{$i}";
+      } @else {
+        $tmp: $i;
+      }
+
+      @if $arg == "mt" {
+        $properties: "margin-top";
+      } @else if $arg == "mb" {
+        $properties: "margin-bottom";
+      } @else if $arg == "pt" {
+        $properties: "padding-top";
+      } @else if $arg == "pb" {
+        $properties: "padding-bottom";
+      }
+
+      .#{$arg}#{$tmp} {
+        // sass-lint:disable no-important
+        #{$properties}: $i * 1px !important;
+        // sass-lint:enable no-important
+      }
+    }
+  }
+  // styleguide:ignore:end
+}
+
+// 5. table cell width
+// -------------------------------------------------------------
+@if $out-table {
+  // styleguide:ignore:start
+  @include prc-each(auto, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200) {
+    table {
+      // sass-lint:disable empty-line-between-blocks, no-important
+      th,
+      td {
+        @if $arg == auto {
+          &.w-#{$arg} {
+            width: auto !important;
+          }
+        } @else {
+          &.w#{$arg} {
+            width: #{$arg}px !important;
+          }
+        }
+      }
+      // sass-lint:enable empty-line-between-blocks, no-important
+
+      @if $arg == auto {
+        &.w-#{$arg} > tr,
+        &.w-#{$arg} > thead > tr,
+        &.w-#{$arg} > tbody > tr,
+        thead.w-#{$arg} > tr,
+        tbody.w-#{$arg} > tr,
+        tr.w-#{$arg} {
+          > th,
+          > td {
+            width: auto;
+          }
+        }
+      } @else {
+        &.w#{$arg} > tr,
+        &.w#{$arg} > thead > tr,
+        &.w#{$arg} > tbody > tr,
+        thead.w#{$arg} > tr,
+        tbody.w#{$arg} > tr,
+        tr.w#{$arg} {
+          > th,
+          > td {
+            width: #{$arg}px;
+          }
+        }
+      }// if
+    }// table
+  }
+  // styleguide:ignore:end
+}
+
+// 6. text style
+// -------------------------------------------------------------
+@if $out-text-style {
+  .bold {
+    font-weight: bold;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+// 7. hide anchor
+// -------------------------------------------------------------
+@if $out-skip-link {
+  ///* for HP reader */
+  // sass-lint:disable no-ids
+  #skiplinkSec,
+  #headAnc,
+  #naviAnc,
+  #mainAnc,
+  #endMainAnc {
+    display: none;
+  }
+  // sass-lint:enable no-ids
+}
+
+// 8. show hide
+// -------------------------------------------------------------
+// sass-lint:disable no-important
+@if $out-show-hide {
+  .show {
+    display: block !important;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .visible {
+    max-height: 99999px;
+    visibility: visible;
+    overflow: visible;
+    @if $support-ie8 {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    }
+    opacity: 1;
+  }
+
+  .hidden {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    @if $support-ie8 {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    }
+    opacity: 0;
+  }
+}
+// sass-lint:enable no-important
+
+
+//-----------------------------------------------------
+//  HTML5
+//-----------------------------------------------------
+// for HTML5
+// 9. HTML5
+// -------------------------------------------------------------
+@if $out-html5 {
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+}
