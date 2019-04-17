@@ -14,7 +14,7 @@ const directory = {
   src: path.resolve(__dirname, '../src'),
   app: path.resolve(__dirname, '../app'),
   public: path.resolve(__dirname, '../public'),
-  dist: path.resolve(__dirname, '../../htdocs'),
+  dist: path.resolve(__dirname, '../../docs'),
 };
 
 const files = {
