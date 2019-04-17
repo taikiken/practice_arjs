@@ -13,3 +13,37 @@
 // project 設定
 // -------------------------------------------------------------
 
+// global-nav
+.global-nav {
+  margin: 10px;
+}
+
+.menu-list-item {
+  margin: 0 0 16px 0;
+}
+
+.menu-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.link-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.menu-list-item-paragraph {
+  margin: 12px 0 12px 12px;
+}
+
+.menu-list-item-link {
+  text-decoration: none;
+  color: #333;
+  transition: opacity 1s linear;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
