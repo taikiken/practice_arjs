@@ -6,4 +6,4 @@
  * http://www.opensource.org/licenses/mit-license.html
  * @author (at)taikiken / http://inazumatv.com
  */
-var o,u,a;o=function(){function e(){!function(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}(this,e)}var n,r,o;return n=e,o=[{key:"verbose",value:function(){console.warn("[APP] build time - ".concat(e.build))}}],(r=null)&&t(n.prototype,r),o&&t(n,o),e}(),u="build",a="".concat("2019-4-17 20:10:39"),u in o?Object.defineProperty(o,u,{value:a,enumerable:!0,configurable:!0,writable:!0}):o[u]=a}});
+var o,u,a;o=function(){function e(){!function(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}(this,e)}var n,r,o;return n=e,o=[{key:"verbose",value:function(){console.warn("[APP] build time - ".concat(e.build))}}],(r=null)&&t(n.prototype,r),o&&t(n,o),e}(),u="build",a="".concat("2019-4-17 20:17:58"),u in o?Object.defineProperty(o,u,{value:a,enumerable:!0,configurable:!0,writable:!0}):o[u]=a}});
