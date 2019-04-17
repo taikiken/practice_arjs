@@ -1,2 +1,1 @@
-# Where things are
-source              : ./_dev
+theme: jekyll-theme-cayman
