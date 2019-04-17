@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>001 - A-Frame - AR.js</title>
+  <meta name="format-detection" content="telephone=no">
+  <link href="assets/css/index.css" rel="stylesheet">
+  <script src="//aframe.io/releases/0.9.0/aframe.min.js"></script>
+  <script src="//cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <script src="assets/js/app.bundle.js"></script>
+</head>
+<body>
+<a-scene stats embedded arjs='trackingMethod: best; debugUIEnabled: false'>
+  <a-marker preset="hiro">
+    <a-box position='0 1 0' material='color: blue; opacity: 0.5;'>
+    </a-box>
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+
+<footer class="footer">
+  <a href="./" class="footer-link">HOME</a>
+</footer>
+</body>
+</html>
