@@ -10,4 +10,4 @@ Practice AR.js step by step
 
 # three.ar.js - examples
 
-[examples](./_dev/public/threear/examples/anchors.html)
+[docs](https://taikiken.github.io/practice_arjs/docs/)
