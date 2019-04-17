@@ -1,2 +1,2 @@
 theme: jekyll-theme-cayman
-baseurl: https://taikiken.github.io/practice_arjs/
+baseurl: {{site.github.url}}
